@@ -33,31 +33,43 @@
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 300px;
-  height: 300px;
+  width: calc(100% - 75%);
   border-radius: 50%;
   filter: blur(30px);
   -webkit-filter: blur(30px);
   background-color: #277ace;
+  z-index: 1;
+}
+
+.circle-one::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 .circle-two {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 300px;
-  height: 300px;
+  width: calc(100% - 75%);
   border-radius: 50%;
   filter: blur(30px);
   -webkit-filter: blur(30px);
   background-image: linear-gradient(to bottom right, #445eb6, #8340a9);
+  z-index: 1;
+}
+
+.circle-two::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 /* MAIN */
 
 .content {
   position: absolute;
-  top: 10%;
+  top: 0;
   left: 0;
   z-index: 2;
   width: 100%;
@@ -161,20 +173,32 @@ button {
 }
 
 button:active {
+  background-color: var(--color-1);
+  color: var(--color-2);
   -webkit-transform: translate(0, 5px);
   transform: translate(0, 5px);
   box-shadow: none;
 }
 
+.disable-btn {
+  background-color: var(--color-1);
+  color: var(--color-2);
+  -webkit-transform: translate(0, 5px);
+  transform: translate(0, 5px);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
 .action-button-container {
+  margin-bottom: .5em;
   display: grid;
   gap: 1em;
 }
 
 .theme-btn {
   position: absolute;
-  bottom: 1em;
-  right: 1em;
+  bottom: .5em;
+  right: .5em;
   z-index: 3;
 }
 

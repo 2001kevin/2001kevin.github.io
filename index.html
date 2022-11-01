@@ -8,9 +8,11 @@
       name="description"
       content="Timer App for Business Idea Competition by ITCC 2022"
     />
+
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <link rel="manifest" href="./assets/js/web.webmanifest">
+
     <script src="../assets/js/index.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/5b8fa639bb.js" crossorigin="anonymous"></script>
@@ -57,14 +59,14 @@
           </div>
 
           <div class="action-button-container">
-            <button type="button" onclick=startCountdown() id="start-btn">Start</button>
-            <button type="button" onclick=stopCountdown() id="stop-btn" disabled>Stop</button>
+            <button type="button" onclick=startCountdown() id="change-btn">Start</button>
+            <button type="button" onclick=stopCountdown() id="stop-btn" class="disable-btn" disabled>Stop</button>
           </div>
         </div>
       </main>
     </div>
 
-    <button class="theme-btn" onclick="changeTheme()"><i class="fa-regular fa-sun"></i></button>
+    <button class="theme-btn" id="theme-btn" onclick="changeTheme()"><i class="fa-regular fa-sun"></i></button>
 
     <script src="./assets/js/register.js"></script>
   </body>
