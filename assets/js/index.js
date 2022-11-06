@@ -99,11 +99,11 @@ function stopCountdown() {
   minute = 0;
   second = 0;
   let loopBeep = 4;
-  $("#beep")[0].play();
+  // $("#beep")[0].play();
 
   let beep = setInterval(function () {
     if (loopBeep !== 0) {
-      $("#beep")[0].play();
+      $("#end")[0].play();
     } else {
       clearInterval(beep);
     }
