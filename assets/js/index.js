@@ -67,19 +67,22 @@ function startCountdown() {
       } else {
         second--;
       }
+      
+      $(".second").text(second);
+      $(".minute").text(minute);
+      $(".hour").text(hour);
 
-      if (minute === 0 && second < 10) {
-        $("#tick")[0].play();
+      if (second < 10) {
+        $(".second").text(`0${second}`);
+        if(minute === 0){
+          $("#tick")[0].play();        
+        }
       }
 
       if (minute === 2 && second === 0) {
         $("#beep")[0].play();
         $(".time-container").css({ "background-color": "#FF0000" });
       }
-
-      $(".second").text(second);
-      $(".minute").text(minute);
-      $(".hour").text(hour);
     }
   }, 1000);
 }
@@ -100,15 +103,16 @@ function stopCountdown() {
   second = 0;
   let loopBeep = 4;
   // $("#beep")[0].play();
+  $("#end")[0].play();
 
-  let beep = setInterval(function () {
-    if (loopBeep !== 0) {
-      $("#end")[0].play();
-    } else {
-      clearInterval(beep);
-    }
-    loopBeep--;
-  }, 1000);
+//   let beep = setInterval(function () {
+//     if (loopBeep !== 0) {
+//       $("#end")[0].play();
+//     } else {
+//       clearInterval(beep);
+//     }
+//     loopBeep--;
+//   }, 1000);
 
   $(".second").text(second);
   $(".minute").text(minute);
