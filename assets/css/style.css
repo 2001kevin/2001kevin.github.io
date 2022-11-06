@@ -88,7 +88,7 @@ main {
 
 .app {
   width: 60%;
-  margin: 0 auto;
+  margin: 8px auto;
   padding: 1em;
   border-radius: 20px;
   font-family: 'Press Start 2P', cursive;
@@ -202,15 +202,62 @@ button:active {
   z-index: 3;
 }
 
+@media screen and (max-width: 1300px) {
+  .app {
+    width: 70%;
+  }
+  span{
+    font-size: 5em;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .app {
+    width: 60%;
+  }
+  span{
+    font-size: 3.5em;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .app {
+    width: 70%;
+  }
+  span{
+    font-size: 3em;
+  }
+}
+
+
 @media screen and (max-width: 700px) {
   .app {
     width: 80%;
+  }
+  span{
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  span{
+    font-size: 2.7em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  span{
+    font-size: 2.2em;
   }
 }
 
 @media screen and (max-width: 500px) {
   .app {
     width: 90%;
+  }
+
+  span{
+    font-size: 2em;
   }
 
   .title {
@@ -226,7 +273,7 @@ button:active {
   }
 
   span {
-    font-size: 1.5em;
+    font-size: 30;
   }
 
   span:nth-child(even) {
