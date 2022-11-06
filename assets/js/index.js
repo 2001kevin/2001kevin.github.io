@@ -4,39 +4,57 @@ let second = 0;
 let isPaused = false;
 
 function increaseHour() {
-  if (hour === 24) hour = 0;
-  else hour++;
-  $(".hour").text(hour);
+  if (hour === 24) hour = 0; else hour++;
+  if (hour < 10) {
+    $(".hour").text(`0${hour}`);
+  } else {
+    $(".hour").text(hour);
+  }
 }
 
 function decreaseHour() {
-  if (hour === 0) hour = 24;
-  else hour--;
-  $(".hour").text(hour);
+  if (hour === 0) hour = 24; else hour--;
+  if (hour < 10) {
+    $(".hour").text(`0${hour}`);
+  } else {
+    $(".hour").text(hour);
+  }
 }
 
 function increaseMinute() {
-  if (minute === 59) minute = 0;
-  else minute++;
-  $(".minute").text(minute);
+  if (minute === 59) minute = 0; else minute++;
+  if (minute < 10) {
+    $(".minute").text(`0${minute}`);
+  } else {
+    $(".minute").text(minute);
+  }
 }
 
 function decreaseMinute() {
-  if (minute === 0) minute = 59;
-  else minute--;
-  $(".minute").text(minute);
+  if (minute === 0) minute = 59; else minute--;
+  if (minute < 10) {
+    $(".minute").text(`0${minute}`);
+  } else {
+    $(".minute").text(minute);
+  }
 }
 
 function increaseSecond() {
-  if (second === 59) second = 0;
-  else second++;
-  $(".second").text(second);
+  if (second === 59) second = 0; else second++;
+  if (second < 10) {
+    $(".second").text(`0${second}`);
+  } else {
+    $(".second").text(second);
+  }
 }
 
 function decreaseSecond() {
-  if (second === 0) second = 59;
-  else second--;
-  $(".second").text(second);
+  if (second === 0) second = 59; else second--;
+  if (second < 10) {
+    $(".second").text(`0${second}`);
+  } else {
+    $(".second").text(second);
+  }
 }
 
 function startCountdown() {
@@ -78,6 +96,14 @@ function startCountdown() {
           $("#tick")[0].play();        
         }
       }
+      
+      if (minute < 10) {
+        $(".minute").text(`0${minute}`);
+      }
+
+      if (hour < 10) {
+        $(".hour").text(`0${hour}`);
+      }
 
       if (minute === 2 && second === 0) {
         $("#beep")[0].play();
@@ -101,22 +127,11 @@ function stopCountdown() {
   hour = 0;
   minute = 0;
   second = 0;
-  let loopBeep = 4;
-  // $("#beep")[0].play();
   $("#end")[0].play();
 
-//   let beep = setInterval(function () {
-//     if (loopBeep !== 0) {
-//       $("#end")[0].play();
-//     } else {
-//       clearInterval(beep);
-//     }
-//     loopBeep--;
-//   }, 1000);
-
-  $(".second").text(second);
-  $(".minute").text(minute);
-  $(".hour").text(hour);
+  $(".second").text(`0${second}`);
+  $(".minute").text(`0${minute}`);
+  $(".hour").text(`0${hour}`);
   $(".time-container").css({ backgroundColor: "var(--color-1)" });
 
   $(".increase-btn").removeAttr("disabled").removeClass("disable-btn");
